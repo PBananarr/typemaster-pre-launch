@@ -1,0 +1,912 @@
+/* === Farben === */
+/*
+White:        #FFFFFF;
+Lightgrey:    #E8EFF2;
+Bluegrey:     #7B8BAD;
+Darkblue:     #162542;
+Softorange:   #FF9B62;
+Orange:       #F16718;
+ */
+
+/* === FONTS === */
+/* barlow-regular - latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/barlow-v5-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/barlow-v5-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-v5-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-v5-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-v5-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-v5-latin-regular.svg#Barlow') format('svg'); /* Legacy iOS */
+}
+/* barlow-500 - latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/barlow-v5-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/barlow-v5-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-v5-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-v5-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-v5-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-v5-latin-500.svg#Barlow') format('svg'); /* Legacy iOS */
+}
+/* barlow-700 - latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/barlow-v5-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/barlow-v5-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-v5-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-v5-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-v5-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-v5-latin-700.svg#Barlow') format('svg'); /* Legacy iOS */
+}
+/* barlow-900 - latin */
+@font-face {
+  font-family: 'Barlow';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/barlow-v5-latin-900.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/barlow-v5-latin-900.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/barlow-v5-latin-900.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/barlow-v5-latin-900.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/barlow-v5-latin-900.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/barlow-v5-latin-900.svg#Barlow') format('svg'); /* Legacy iOS */
+}
+
+/* === GENERELLES === */
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body h1,
+body h2,
+body h3 {
+  font-family: 'Barlow', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 900;
+  color: #162542;
+  text-transform: uppercase;
+}
+
+h1 { font-size: 3.36rem; }
+h2 { font-size: 1.92rem; }
+h3 { font-size: 1.62rem; }
+
+body p,
+body span {
+  font-family: 'Barlow', 'Helvetica Neue', 'Arial', sans-serif;
+  font-size: 0.96rem;
+  font-weight: 500;
+  line-height: 1.56rem;
+  color: #7B8BAD;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.pre-order-btn {
+  font-family: 'Barlow', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 7px;
+  padding: 1.2rem 1.5rem;
+
+}
+
+/* === KOPF-BEREICH === */
+#top-leiste {
+  margin-top: 3rem;
+  margin-bottom: 4rem;
+}
+
+#top-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#top-flex > button {
+  background-color: #E8EFF2;
+  transition-property: color, background-color;
+  transition-duration: .8s;
+}
+
+#top-flex > button:hover {
+  color: #FFFFFF;
+  background-color: #162542;
+}
+
+/* === BILD-RAND-RECHTS === */
+#bild-rand-rechts {
+  display: relative;
+}
+
+.bild-rand-rechts {
+  background: url(../img/shared/pattern-square.svg) no-repeat 110px 0;
+  position: absolute;
+  right: 0;
+  width: 255px;
+  height: 240px;
+}
+
+/* === TYPEMASTER-KEYBOARD-BEREICH === */
+#typemaster-text {
+  text-align: left;
+  max-width: 54%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+#typemaster-text > h1,
+#typemaster-text > p {
+  margin-bottom: 3rem;
+}
+
+#typemaster-text > button {
+  background-color: #F16718;
+  color: #FFFFFF;
+  transition-property: background-color;
+  transition-duration: .8s;
+}
+
+#typemaster-text > button:hover {
+  background-color: #FF9B62;
+}
+
+#typemaster-text > span {
+  text-transform: uppercase;
+  margin-left: 2rem;
+  font-weight: 700;
+}
+
+#typemaster-img {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.keyboard-picture {
+  background: url(../img/desktop/image-keyboard.jpg) no-repeat 0 0;
+  background-size: contain;
+  width: 100%;
+  height: 0;
+  padding-top: 88.889%;
+  border-radius: 1.5rem;
+}
+
+/* ==== BILD-RAND-LINKS ==== */
+#bild-rand-links {
+  display: relative;
+}
+
+#bild-rand-links > svg {
+position: absolute;
+left: -110px;
+}
+
+/* ==== WIRELESS-KEYBOARD-BEREICH ==== */
+#wireless-keyboard-bereich {
+  margin-top: 2rem;
+}
+
+#wireless-keyboard-bereich .col-06 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#wireless-keyboard-bereich .col-06 > article {
+  margin-right: 2rem;
+}
+
+#wireless-keyboard-bereich img {
+  height: auto;
+  width: 100%;
+  border-radius: 1.5rem;
+}
+
+.flex-article1 {
+  background-color: #F16718;
+  border-radius: 1.5rem;
+}
+
+.phone-and-keyboard {
+  -o-object-fit: contain;
+     object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+#wireless-text {
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 4rem;
+  margin-right: auto;
+}
+#wireless-tablet-ansicht {
+  display: none;
+}
+
+/* ==== WIRELESS-KEYBOARD-TABLET / MOBILE-BEREICH ==== */
+#tablet-grid {
+  display: grid;
+  grid-template-columns: [col-1-start] 1fr [col-1-end col-2-start] 2fr [col-2-end col-3-start] 1fr [col-3-end];
+  grid-gap: 1rem 2rem;
+  grid-template-areas:
+  "phone-keyboard glass-keyboard wireless-text-tablet";
+}
+
+#tablet-grid img {
+  max-height: 400px;
+  width: auto;
+}
+
+/* ORANGE MASK */
+#phone-keyboard-tablet {
+  max-height: 400px;
+  width: 16.7rem;
+  background-color: #F16718;
+  border-radius: 1.5rem;
+  grid-area: phone-keyboard;
+}
+
+#phone-keyboard-tablet > img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+}
+/* ORANGE MASK END */
+
+#glass-keyboard-tablet {
+  grid-area: glass-keyboard;
+}
+
+#wireless-text-tablet {
+  grid-area: wireless-text-tablet;
+}
+
+
+/* ==== KEYBOARD-FAVORITE-BEREICH ==== */
+#keyboard-favorite-bereich {
+  margin-top: 7rem;
+}
+
+#key-favorite-grid {
+  display: grid;
+  grid-template: auto / 1fr 1fr 1fr 1fr;
+  grid-gap: 0 2rem;
+  grid-template-areas:
+  "compatible bluetooth battery backlit";
+}
+
+.flex-favorite {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.flex-favorite h3 {
+  width: 63%;
+}
+
+.flex-favorite p {
+  width: 73%;
+}
+
+.compatible {
+  grid-area: compatible;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.bluetooth {
+  grid-area: bluetooth;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.battery {
+  grid-area: battery;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.backlit {
+  grid-area: backlit;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.icon {
+  background-color: #F16718;
+  width: 65px;
+  height: 65px;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==== FOOTER-BEREICH ==== */
+#copyrights {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* === GRID-SYSTEM === */
+.container {
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+[class*='col-'] {
+  float: left;
+  min-height: 1px;
+}
+
+.col-01 {width: 16.666%;  }
+.col-02 {width: 33.333%;  }
+.col-03 {width: 50%;      }
+.col-04 {width: 66.666%;  }
+.col-05 {width: 83.333%;  }
+.col-06 {width: 100%;     }
+
+/* === MEDIAQUERIES GRIDSYSTEM COL- === */
+
+@media (max-width: 1024px) {
+  .col-01 {width: 33.333%; }
+}
+
+@media (max-width: 768px) {
+  .col-01 {width: 50%;    }
+  .col-02 {width: 100%;   }
+  .col-03 {width: 100%;   }
+  .col-04 {width: 100%;   }
+  .col-05 {width: 100%;   }
+}
+
+@media (max-width: 480px) {
+  .col-01 {width: 100%;   }
+  .col-02 {width: 100%;   }
+  .col-03 {width: 100%;   }
+  .col-04 {width: 100%;   }
+}
+
+/* === MEDIAQUERIES TYPEMASTER-KEYBOARD-BEREICH === */
+@media (max-width: 1820px) {
+  #typemaster-text {
+    max-width: 58%;
+  }
+}
+@media (max-width: 1694px) {
+  #typemaster-text {
+    max-width: 63%;
+  }
+
+  #typemaster-text > h1,
+  #typemaster-text > p {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (max-width: 1440px) {
+  #typemaster-text {
+    max-width: 70%;
+  }
+
+  #typemaster-text > h1,
+  #typemaster-text > p {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 1260px) {
+  #top-leiste > .container,
+  #typemaster-keyboard-bereich > .container,
+  #wireless-keyboard-bereich > .container,
+  #keyboard-favorite-bereich > .container {
+    width: 85%;
+  }
+
+  #typemaster-text {
+    max-width: 73%;
+  }
+
+  .bild-rand-rechts {
+    background: url(../img/shared/pattern-square.svg) no-repeat 200px 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  #top-leiste > .container,
+  #typemaster-keyboard-bereich > .container,
+  #wireless-keyboard-bereich > .container,
+  #keyboard-favorite-bereich > .container {
+    width: 90%;
+  }
+  .bild-rand-rechts {
+    display: none;
+  }
+
+  #typemaster-keyboard-bereich {
+    margin-bottom: 2rem;
+    overflow-x: hidden;
+  }
+
+  #typemaster-keyboard-bereich .row > .col-03:last-child {
+    position: relative;
+    left: 125px;
+  }
+
+  #typemaster-text {
+    max-width: 80%;
+  }
+
+  .keyboard-picture {
+    border-radius: 1.5rem 0 0 1.5rem;
+    background: url(../img/tablet/image-keyboard.jpg) no-repeat 0 0;
+    background-size: contain;
+    min-width: 478px;
+    min-height: 425px;
+  }
+}
+
+@media (max-width: 870px) {
+  #typemaster-keyboard-bereich .row > .col-03:last-child {
+    position: relative;
+    left: 185px;
+  }
+
+  #typemaster-text {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  #typemaster-keyboard-bereich .col-03 {
+    width: 50%;
+  }
+
+  h1 { font-size: 2.88rem; }
+}
+
+@media (max-width: 758px) {
+  #typemaster-keyboard-bereich .col-03 {
+    width: 100%;
+  }
+
+  #typemaster-keyboard-bereich .row > .col-03:last-child {
+    position: relative;
+    left: 40px;
+  }
+
+  #typemaster-keyboard-bereich {
+    margin-bottom: 1rem;
+  }
+
+  #typemaster-text {
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+  #typemaster-text h1 {
+    margin-top: 0;
+  }
+
+  .keyboard-picture {
+    background: url(../img/mobile/image-keyboard.jpg) no-repeat 0 0;
+    background-size: contain;
+    min-width: 372px;
+    min-height: 331px;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (max-width: 342px) {
+  #typemaster-text span {
+    display: block;
+    margin-top: .5rem;
+    margin-left: 0;
+  }
+}
+
+/* === MEDIAQUERIES WIRELESS-KEYBOARD-TABLET / MOBILE-BEREICH === */
+@media (max-width: 1260px) {
+  #bild-rand-links > svg {
+  left: -200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #bild-rand-links > svg,
+  #wireless-desktop-ansicht,
+  .mobile-img1,
+  .mobile-img2 {
+  display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  #wireless-tablet-ansicht {
+    display: block;
+  }
+
+  #tablet-grid {
+    grid-template: auto / .5fr 1fr 2.5fr 1fr;
+    grid-template-areas:
+    "phone-keyboard phone-keyboard glass-keyboard glass-keyboard"
+    "wireless-text-tablet wireless-text-tablet wireless-text-tablet wireless-text-tablet";
+  }
+
+  #wireless-text-tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #wireless-text-tablet > div {
+    align-content: flex-end;
+    align-self: center;
+  }
+  #wireless-text-tablet > div > p {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 910px) {
+  #tablet-grid img {
+    max-height: 360px;
+    width: auto;
+  }
+
+  #phone-keyboard-tablet {
+    max-height: 360px;
+    width: 15.05rem;
+  }
+}
+
+@media (max-width: 830px) {
+  #tablet-grid img {
+    max-height: 320px;
+    width: auto;
+  }
+  #phone-keyboard-tablet {
+    max-height: 320px;
+    width: 13.4rem;
+    position: relative;
+  }
+}
+
+@media (max-width: 758px) {
+  .tablet-img1,
+  .tablet-img2 {
+  display: none;
+  }
+  .mobile-img1,
+  .mobile-img2 {
+  display: inline-block;
+  }
+
+  #tablet-grid {
+    grid-template: auto / .5fr 1fr 5fr;
+    grid-template-areas:
+    "phone-keyboard phone-keyboard glass-keyboard glass-keyboard"
+    "wireless-text-tablet wireless-text-tablet wireless-text-tablet wireless-text-tablet";
+  }
+
+  #phone-keyboard-tablet {
+    left: -70px;
+  }
+  #wireless-text-tablet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  #wireless-text-tablet h2 {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #wireless-text-tablet > div > p {
+    margin-top: 0;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #phone-keyboard-tablet {
+  }
+
+  #tablet-grid img {
+    max-height: 250px;
+    width: auto;
+  }
+  .mobile-img1 {
+    position: relative;
+    left: 10px;
+  }
+
+  #phone-keyboard-tablet {
+    max-height: 250px;
+    width: 11.05rem;
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  #tablet-grid img {
+    max-height: 220px;
+    width: auto;
+  }
+  .mobile-img1 {
+    position: relative;
+    left: 20px;
+  }
+
+  #phone-keyboard-tablet {
+    max-height: 220px;
+    width: 10.44rem;
+    position: relative;
+  }
+}
+
+@media (max-width: 420px) {
+  #tablet-grid img {
+    max-height: 193px;
+    width: auto;
+  }
+  .mobile-img1 {
+    position: relative;
+    left: 30px;
+  }
+
+  #phone-keyboard-tablet {
+    max-height: 193px;
+    width: 9.95rem;
+    position: relative;
+  }
+}
+
+@media (max-width: 360px) {
+  #tablet-grid img {
+    max-height: 160px;
+    width: auto;
+  }
+  .mobile-img1 {
+    position: relative;
+    left: 32px;
+  }
+
+  #phone-keyboard-tablet {
+    max-height: 160px;
+    width: 8.65rem;
+    position: relative;
+  }
+}
+
+/* ==== MEDIAQUERIES-KEYBOARD-FAVORITE-BEREICH ==== */
+@media (max-width: 1756px) {
+  .flex-favorite h3 {
+    width: 67%;
+  }
+  .flex-favorite p {
+    width: 80%;
+  }
+}
+@media (max-width: 1660px) {
+  .flex-favorite h3 {
+    width: 73%;
+  }
+  .flex-favorite p {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1536px) {
+  .flex-favorite h3 {
+    width: 78%;
+  }
+  .flex-favorite p {
+    width: 93%;
+  }
+}
+
+@media (max-width: 1447px) {
+  .flex-favorite h3 {
+    width: 83%;
+  }
+  .flex-favorite p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1369px) {
+  .flex-favorite h3 {
+    width: 93%;
+  }
+}
+
+@media (max-width: 1024px) {
+  #keyboard-favorite-bereich {
+    margin-top: 5rem;
+  }
+
+  #key-favorite-grid {
+    display: grid;
+    grid-template: auto / 1fr 1fr;
+    grid-gap: 3rem 2rem;
+    grid-template-areas:
+    "compatible bluetooth"
+    "battery backlit";
+  }
+
+  .flex-favorite {
+    width: 62%;
+  }
+  .flex-favorite > h3 {
+    width: 80%;
+  }
+
+  .flex-favorite > p {
+    margin-top: 0;
+  }
+
+  .compatible,
+  .bluetooth,
+  .battery,
+  .backlit {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 905px) {
+  .flex-favorite {
+    width: 80%;
+  }
+  .flex-favorite > h3 {
+    width: 75%;
+  }
+}
+
+@media (max-width: 793px) {
+  .flex-favorite {
+    width: 85%;
+  }
+}
+
+@media (max-width: 758px) {
+  #key-favorite-grid {
+    display: grid;
+    grid-template: auto / 1fr;
+    grid-gap: 3rem 2rem;
+    grid-template-areas:
+    "compatible"
+    "bluetooth"
+    "battery"
+    "backlit";
+  }
+  .flex-favorite {
+    text-align: center;
+    align-items: center;
+    width: 80%;
+  }
+  .flex-favorite h3 {
+    width: 40%;
+  }
+  .flex-favorite p {
+    width: 58%;
+  }
+  .compatible,
+  .bluetooth,
+  .battery,
+  .backlit {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 678px) {
+  .flex-favorite {
+    width: 85%;
+  }
+  .flex-favorite h3 {
+    width: 45%;
+  }
+  .flex-favorite p {
+    width: 60%;
+  }
+}
+
+@media (max-width: 570px) {
+  .flex-favorite {
+    width: 90%;
+  }
+  .flex-favorite h3 {
+    width: 50%;
+  }
+  .flex-favorite p {
+    width: 68%;
+  }
+}
+
+@media (max-width: 470px) {
+  .flex-favorite {
+    width: 95%;
+  }
+  .flex-favorite h3 {
+    width: 55%;
+  }
+  .flex-favorite p {
+    width: 79%;
+  }
+}
+
+@media (max-width: 425px) {
+  .flex-favorite {
+    width: 100%;
+  }
+  .flex-favorite h3 {
+    width: 60%;
+  }
+  .flex-favorite p {
+    width: 82%;
+  }
+}
+
+@media (max-width: 375px) {
+  .flex-favorite h3 {
+    width: 65%;
+  }
+  .flex-favorite p {
+    width: 93%;
+  }
+}
+
+@media (max-width: 375px) {
+  .flex-favorite h3 {
+    width: 80%;
+  }
+  .flex-favorite p {
+    width: 100%;
+  }
+}
